@@ -63,7 +63,7 @@ export class AuthService {
     user: User;
     requiresTwoFactor?: boolean;
   }> {
-    const user = await this.validateUser(loginDto.login, loginDto.password);
+    const user = await this.validateUser(loginDto.email, loginDto.password);
 
     if (!user) {
       throw new UnauthorizedException('Invalid credentials');
